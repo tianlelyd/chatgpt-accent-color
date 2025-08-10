@@ -1,6 +1,6 @@
 # ChatGPT Theme Controller
 
-A Chrome extension to customize ChatGPT's theme. It overrides server-side theme settings so you have full control over ChatGPT's interface colors.
+Unlock all ChatGPT accent colors for free — a Chrome extension that removes color restrictions, giving you full control over ChatGPT's interface colors.
 
 ## Features
 
