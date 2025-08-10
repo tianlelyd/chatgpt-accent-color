@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <h2>ChatGPT Theme Controller</h2>
+        
+        <div class="control-section">
+            <label class="switch">
+                <input type="checkbox" id="enableSwitch" checked>
+                <span class="slider"></span>
+            </label>
+            <span id="statusText">Enabled</span>
+        </div>
+        
+        <div class="theme-grid">
+            <div class="theme-option" data-theme="default">
+                <div class="color-circle" style="background: #808080"></div>
+                <span>Default</span>
+            </div>
+            <div class="theme-option" data-theme="blue">
+                <div class="color-circle" style="background: #3b82f6"></div>
+                <span>Blue</span>
+            </div>
+            <div class="theme-option" data-theme="green">
+                <div class="color-circle" style="background: #10b981"></div>
+                <span>Green</span>
+            </div>
+            <div class="theme-option" data-theme="yellow">
+                <div class="color-circle" style="background: #f59e0b"></div>
+                <span>Yellow</span>
+            </div>
+            <div class="theme-option" data-theme="pink">
+                <div class="color-circle" style="background: #ec4899"></div>
+                <span>Pink</span>
+            </div>
+            <div class="theme-option" data-theme="orange">
+                <div class="color-circle" style="background: #f97316"></div>
+                <span>Orange</span>
+            </div>
+            <div class="theme-option" data-theme="black">
+                <div class="color-circle" style="background: #000000"></div>
+                <span>Black</span>
+            </div>
+            <div class="theme-option" data-theme="purple">
+                <div class="color-circle" style="background: #9333ea"></div>
+                <span>Purple</span>
+            </div>
+            <div class="theme-option" data-theme="red">
+                <div class="color-circle" style="background: #ef4444"></div>
+                <span>Red</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <button id="refreshBtn">Refresh Page</button>
+            <button id="resetBtn">Reset Settings</button>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

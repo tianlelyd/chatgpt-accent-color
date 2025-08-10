@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Icons</title>
+</head>
+<body>
+    <h2>Generate Extension Icons</h2>
+    <p>Please follow the steps below to generate icons:</p>
+    <ol>
+        <li>Open this file in your browser</li>
+        <li>Right-click each canvas → Save image as</li>
+        <li>Save with the corresponding filename (icon16.png, icon48.png, icon128.png)</li>
+    </ol>
+    
+    <div style="display: flex; gap: 20px; align-items: center; margin: 20px 0;">
+        <div>
+            <h3>16x16</h3>
+            <canvas id="icon16" width="16" height="16" style="border: 1px solid #ccc;"></canvas>
+            <br>
+            <button onclick="downloadCanvas('icon16', 'icon16.png')">Download icon16.png</button>
+        </div>
+        
+        <div>
+            <h3>48x48</h3>
+            <canvas id="icon48" width="48" height="48" style="border: 1px solid #ccc;"></canvas>
+            <br>
+            <button onclick="downloadCanvas('icon48', 'icon48.png')">Download icon48.png</button>
+        </div>
+        
+        <div>
+            <h3>128x128</h3>
+            <canvas id="icon128" width="128" height="128" style="border: 1px solid #ccc;"></canvas>
+            <br>
+            <button onclick="downloadCanvas('icon128', 'icon128.png')">Download icon128.png</button>
+        </div>
+    </div>
+
+    <script>
+        function drawIcon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Background rounded rectangle
+            const radius = size * 0.15;
+            ctx.fillStyle = '#10b981';
+            ctx.beginPath();
+            ctx.moveTo(radius, 0);
+            ctx.lineTo(size - radius, 0);
+            ctx.quadraticCurveTo(size, 0, size, radius);
+            ctx.lineTo(size, size - radius);
+            ctx.quadraticCurveTo(size, size, size - radius, size);
+            ctx.lineTo(radius, size);
+            ctx.quadraticCurveTo(0, size, 0, size - radius);
+            ctx.lineTo(0, radius);
+            ctx.quadraticCurveTo(0, 0, radius, 0);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Palette symbol
+            ctx.fillStyle = 'white';
+            ctx.font = `${size * 0.5}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🎨', size / 2, size / 2 + size * 0.05);
+        }
+        
+        function downloadCanvas(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Draw all icons
+        drawIcon('icon16', 16);
+        drawIcon('icon48', 48);
+        drawIcon('icon128', 128);
+    </script>
+</body>
+</html>
