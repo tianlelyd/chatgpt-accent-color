@@ -65,12 +65,7 @@
             attributeFilter: ['data-chat-theme']
         });
         
-        // Also periodically check and reapply theme (backup mechanism)
-        setInterval(() => {
-            if (isEnabled && document.documentElement.getAttribute('data-chat-theme') !== currentTheme) {
-                applyTheme(currentTheme);
-            }
-        }, 1000);
+        
     }
     
     // Listen for messages from popup
